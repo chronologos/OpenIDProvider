@@ -30,6 +30,28 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/.well-known/openid-configuration",
+        "function": "oidc"
+      },
+      {
+        "source": "/connect/authorize",
+        "function": "authorize"
+      },
+      {
+        "source": "/connect/userinfo",
+        "function": "helloWorld"
+      },
+      {
+        "source": "/connect/register",
+        "function": "helloWorld"
+      },
+      {
+        "source": "/oidc",
+        "function": "oidc"
+      }
     ]
   }
 }

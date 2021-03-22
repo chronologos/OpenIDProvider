@@ -45,6 +45,7 @@
       <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
       <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
     </div>
+    <p id="userInfo"></p>
     <p id="load">Firebase SDK Loading&hellip;</p>
 
     <script>
@@ -68,7 +69,10 @@
           // Handle error.
         });
 
-        // firebase.auth().onAuthStateChanged(user => { });
+        firebase.auth().onAuthStateChanged(user => {
+          const userEl = document.querySelector('#userInfo');
+          userEl.textContent = JSON.stringify(user);
+        });
         // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
         // firebase.firestore().doc('/foo/bar').get().then(() => { });
         // firebase.functions().httpsCallable('yourFunction')().then(() => { });

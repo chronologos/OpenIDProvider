@@ -3,13 +3,17 @@
   "version": "0.0.1",
   "license": "UNLICENSED",
   "dependencies": {
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
     "firebase": "^8.3.1",
-    "firebase-admin": "^9.5.0"
+    "firebase-admin": "^9.5.0",
+    "prettier": "^2.2.1"
   },
   "devDependencies": {
     "typescript": "^4.2.3"
   },
   "scripts": {
+    "dev": "yarn run build && firebase emulators:start ",
     "build": "tsc -b",
     "test": "jest"
   }
